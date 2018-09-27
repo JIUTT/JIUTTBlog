@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>画廊</title>
+    <script language="JavaScript" src="js/jquery-3.3.1.min.js"></script>
+    <!--[if IE 8]>
+	    <script src="js/jquery-1.8.3.min.js"></script>
+   <![endif]-->
+    <style type="text/css">
+    	*{
+    		padding: 0px;
+    		margin: 0px;
+    		text-decoration: none;
+    		list-style: none;
+    	}
+	body,#iframe0{
+                min-width: 320px;
+        }
+   		.warp{
+		     position: relative;
+		    top: -120px;	
+   		}
+   		.bigbox {
+   			max-height: 80%;
+   			overflow: hidden;
+   		}
+   		#bg1 {
+   			width: 100%;
+   			height: 980px;
+   			background: url(https://img4.duitang.com/uploads/item/201601/25/20160125160125_NHZid.jpeg) no-repeat 0 50%/100%;
+   		}
+   		.arrow{
+   			font-size: 200px;
+		    position: absolute;
+		    left: 50%;
+		    transform: translateX(-50%);
+		    width: 150px;
+    		height: 980px;
+   		}
+   		.arrow a{
+   			color: #fff;
+   			opacity: 0.2;
+   		}
+   		.arrow a:hover{
+   			opacity: 0.6;
+   		}
+   		.arrow .pre{
+   			position: absolute;
+    		top: -60px;
+   			display: block;
+   			transform: rotate(90deg);
+   		}
+   		.arrow .next{
+   			position: absolute;
+    		bottom: -60px;
+    		transform: rotate(90deg);
+   		}
+   		.smallbox{
+   			position: fixed;
+   			bottom: 0px;
+   			width: 330px;
+   			height: 312px;
+   			overflow: hidden;
+   		}
+   		.smallbox a{
+   			display: block;
+   			float: left;
+   			margin-left: 10px;
+   		}
+   		.smallbox img{
+   			width: 100px;
+   			height: 100px;
+   		}
+   		.smallbox .before{
+		    width: 100px;
+		    display: block;
+		    height: 100px;
+		    background: #fff;
+		    opacity: 0.3;
+		    position: absolute;
+   		}
+   		.smallbox .before:hover{
+   			 opacity: 0;
+   		}
+   		.smallbox a:active:before{
+   			 opacity: 0;
+   		}
+   		.clear{
+   			clear: both;
+   		}
+    </style>
+</head>
+<body>
+	<IFRAME NAME="content_frame" allowTransparency="true" 
+  class="navbar-fixed-top" width=100% frameborder="0" SRC="head-nav.html" height="200px" id="iframe0" ></IFRAME>
+	<div class="warp">
+		<div class="bigbox">
+			<div class="arrow">
+				<a href="javascript:;" class="pre" id="pre"><</a>
+				<a href="javascript:;" class="next" id="next">></a>
+			</div>
+			<div id="bg1" data-index="0">
+				
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="smallbox" id="smallImages">
+			<a href="#">
+				<div></div>
+				<img src="https://img4.duitang.com/uploads/item/201601/25/20160125160125_NHZid.jpeg"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="http://res.cngoldres.com/upload/2018/0731/c779d48c25537e5be70b89d1a9306e1b.jpeg?_=1533018352342"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="https://img4.duitang.com/uploads/item/201601/25/20160125160125_NHZid.jpeg"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="http://res.cngoldres.com/upload/2018/0731/c779d48c25537e5be70b89d1a9306e1b.jpeg?_=1533018352342"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="https://img4.duitang.com/uploads/item/201601/25/20160125160125_NHZid.jpeg"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="http://res.cngoldres.com/upload/2018/0731/c779d48c25537e5be70b89d1a9306e1b.jpeg?_=1533018352342"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="https://img4.duitang.com/uploads/item/201601/25/20160125160125_NHZid.jpeg"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="http://res.cngoldres.com/upload/2018/0731/c779d48c25537e5be70b89d1a9306e1b.jpeg?_=1533018352342"/>
+			</a>
+			<a href="#">
+				<div class="before"></div>
+				<img src="https://img4.duitang.com/uploads/item/201601/25/20160125160125_NHZid.jpeg"/>
+			</a>
+
+		</div>
+		<div class="clear"></div>
+
+	</div>
+	
+</body>
+<script type="text/javascript">
+	// 添加滚动事件
+	
+	$("#smallImages a").click(function(){
+		var src = $(this).find("img").attr("src");
+		$("#bg1").css("background-image","url("+src+")");
+		var index = $(this).index();
+		$("#bg1").attr("data-index",$(this).index());
+		$("#smallImages a").find("div:first").addClass("before");
+		$("#smallImages a").find("div:first").eq(index).removeClass("before");
+	});
+	$("#pre").click(function(){
+		preImg();
+	});
+	$("#next").click(function(){
+		nextImg();
+	});
+
+	
+	function nextImg(){
+		var imgs = $("#smallImages a").find("img");
+		var index = parseInt($("#bg1").attr("data-index"));
+		if(index<imgs.length-1){
+			// 显示上一张照片
+			var preSrc = imgs.eq(index+1).attr("src");
+			$("#bg1").attr("data-index",index+1);
+			$("#bg1").css("background-image","url("+preSrc+")");
+			$("#smallImages a").find("div:first").addClass("before");
+			$("#smallImages a").find("div:first").eq(index+1).removeClass("before");
+		}else{
+			alert("当前已经是最后一张图片！");
+			
+		}
+	}
+	function preImg(){
+		var imgs = $("#smallImages a").find("img");
+		var index = parseInt($("#bg1").attr("data-index"));
+		if(index>0){
+			// 显示上一张照片
+			var preSrc = imgs.eq(index-1).attr("src");
+			$("#bg1").attr("data-index",index-1);
+			$("#bg1").css("background-image","url("+preSrc+")");
+			$("#smallImages a").find("div:first").addClass("before");
+			$("#smallImages a").find("div:first").eq(index-1).removeClass("before");
+		}else{
+			alert("当前是第一张图片！");
+			
+		}
+	}
+
+	</script>
+</html>
