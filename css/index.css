@@ -194,7 +194,11 @@ body{
     font-size: 15px;
     float:left;
     color: #222;
-    overflow:hidden; 
+    overflow:hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
 }
 .text-small div:hover{
     cursor: pointer;
