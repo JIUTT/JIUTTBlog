@@ -1,0 +1,422 @@
+<!doctype html>
+
+<html lang="zh-CN">
+<head>
+    <title>MY BOLG</title>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <!--[if IE 8]>
+     <script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
+     <script src="https://cdn.bootcss.com/css3pie/2.0beta1/PIE_IE9.js"></script>
+     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <![endif]-->
+	
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="css/head.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <script src="js/scroll.js"></script>
+    <style>
+  
+        .clear{
+            clear: both;
+        }
+        .hide{
+            display: none;
+        }
+        .float-right{
+            float: right;
+        }
+         .float-left{
+            float: left;
+        }
+        .margin_left_10{
+            margin-left: 10px;
+        }
+        body,#iframe0{
+                min-width: 320px;
+        }
+        body{
+            padding-top:80px;
+            color: #555;
+			
+        }
+        
+        .banner1,.text{
+            width:1000px;
+            margin: 0 auto;
+        }
+        .text{
+            
+            margin-top: 20px;
+        }
+        .side_frame{
+            position: fixed;
+            
+        }
+        @media (min-width: 768px) and (max-width: 979px) {
+            .banner1,.text{
+             width:768px;  
+            }
+            .banner-left{
+               width:100%;
+            }
+            .banner-left p{
+             width:83%;   
+            }
+            .banner-right{
+                display: none;
+            }
+            .text-right1{
+                display: none;
+            }
+            .text-left{
+                width: 768px;
+            }
+            .margin_left_10{
+                margin-left: 10px;
+            }
+            }
+        @media (max-width: 767px) { 
+            .banner1,.text{
+             width:767px;  
+            }
+            .banner-left{
+               width:100%;
+            }
+            .banner-left p{
+             width:83%;   
+            }
+            .banner-right{
+                display: none;
+            }
+            .text-right1{
+                display: none;
+            }
+            .text-left{
+                width: 767px;
+            }
+            .margin_left_10{
+                margin-left: 10px;
+            }
+                  
+            }/*平板横向大小*/
+            
+        @media (max-width: 480px){
+            .banner1,.text{
+             width:480px;  
+            }
+            .banner1{
+                height: auto;
+                
+            }
+            .banner-left{
+               width:100%;
+               margin-bottom: 10px;
+            }
+            .banner-left img{
+                height: 100%;
+            }
+            .banner-left p{
+             width:88.4%;   
+            }
+            .banner-right{
+                display: none;
+            }
+            .text-right1{
+                display: none;
+            }
+            .text-left{
+                width: 480px;
+            }
+            .text-small div{
+               width:93%;
+            }
+            .text-small div p{
+                width:60%;
+            }
+            .float-left{
+                float: none;
+            }
+            .float-right{
+                float: none;
+            }
+            .img-small div{
+                width:100%;
+                height: 150px;
+                margin-bottom:10px; 
+            }
+            .margin_left_10{
+                margin-left: 0px;
+            }
+            .nav-bar{
+                width: 100%;
+            }
+            .nav-bar a{
+                width:auto;
+                padding:0 3px;
+            }
+            .article a.article_img {
+                width:100%;
+                height: 100%;
+                float: none;
+            }
+            .article_right .right_bottom{
+                position: static;
+                margin-top:10px; 
+            }
+        }
+        @media (min-width: 370px)and (max-width: 414px){
+            .banner1,.text{
+             width:370px;  
+            }
+            .banner1{
+                height: auto;
+            }
+            .banner-left{
+               width:100%;
+            }
+            .banner-left img{
+                height: 100%;
+            }.banner-left p{
+               font-size: 1em;
+            }
+            .banner-left img{
+                height: 100%;
+            }
+            .arrow-left{
+                width:19px;
+                height: 34px;
+            }
+            .arrow-right{
+                width:19px;
+                height: 34px;
+            }
+            .banner-circle{
+                height: 0px;
+                bottom: 30px;
+            }
+            .text-left{
+                width: 370px;
+            }
+            .text-small div{
+               width:93%;
+            }
+            .text-small div p{
+              width:60%;
+            }
+            .nav-bar{
+               display: none;
+            }
+            
+        }
+        @media (min-width: 320px)and (max-width: 360px){
+            .banner1,.text{
+             width:320px;  
+            }
+            .banner1{
+                height: auto;
+            }
+            .banner-left{
+               width:100%;
+            }
+            .banner-left p{
+               font-size: 1em;
+            }
+            .banner-left img{
+                height: 100%;
+            }
+            .arrow-left{
+                width:19px;
+                height: 34px;
+            }
+            .arrow-right{
+                width:19px;
+                height: 34px;
+            }
+            .banner-circle{
+                height: 0px;
+                bottom: 30px;
+            }
+            .text-left{
+                width: 320px;
+            }
+            .text-small div{
+               width:93%;
+            }
+            .text-small div p{
+              width:50%;
+            }
+            .nav-bar{
+               display: none;
+            }
+			
+        }
+    </style>
+    
+</head>
+<body onscroll="onMyScroll()">
+  <IFRAME NAME="content_frame" allowTransparency="true" 
+  class="navbar-fixed-top" width=100% frameborder="0" SRC="head-nav.html" height="200px" id="iframe0" ></IFRAME><!--导航栏引入--> 
+	
+	<div class="clear"></div>
+    <div class="banner1">
+        <div class="banner-left " id="banner">
+            <span class="arrow-left" onclick="preArrow()"></span>
+            <span class="arrow-right" onclick="nextArrow()"></span>
+            
+            <a href="javascript:void(0)">
+                <img src="img/banner (1).jpg" />
+				<p>标题一</p>
+            </a>
+            <a href="javascript:void(0)" class="hide">
+                <img src="img/banner (2).jpg" />
+				<p>标题二</p>
+            </a>
+            <a href="javascript:void(0)" class="hide">
+                <img src="img/banner (3).jpg" />
+				<p>标题三</p>
+            </a>
+            
+            <ul class="banner-circle" id="tabs">
+                <li class="li_hover"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!--banner左侧轮播结束-->
+        <div class="banner-right">
+
+            <div class="banner-right-top">
+                <p>学无止境</p>    
+                <!--<div class="cover"></div>上层遮盖，鼠标滑过消失-->
+                <a href="javascript:void(0)"></a>
+                <img src="img/Side  (1).jpg" />
+                
+            </div>
+            <div class="banner-right-bottom">
+                <p>学无止境</p>    
+                <!--<div class="cover"></div>上层遮盖，鼠标滑过消失-->
+                <a href="javascript:void(0)"></a>
+                <img src="img/Side  (2).jpg" />
+                
+            </div>
+        </div>
+        <!--banner侧边栏图片结束-->
+    </div><!--banner结束-->
+    <div class="text"> <!--text部分总盒子-->
+        <div class="text-left" id="text_left"><!--text左侧-->
+            <div class="text-small"><!--text左侧第一栏缩略图小图文-->
+                <div class="float-left">
+                    <a>
+                        <img src="img/other (1).jpg"/>
+                   
+                     </a>
+                     <p>博文名字博文名字博文名字博博文名字博文名字博文名字博博文名字博文名字博文名字博</p>
+                </div>
+                <div class="float-right">
+                    <a>
+                        <img src="img/other (2).jpg"/>
+                    </a>
+                    <p>博文名字博文名字博文名字博文名字</p>
+                </div>
+                <div class="float-left">
+                    <a>
+                        <img src="img/other (1).jpg"/>
+                    </a>
+                    <p>博文名字博文名字</p>
+                </div>
+                 <div class="float-right">
+                    <a>
+                        <img src="img/other (2).jpg"/>
+                    </a>
+                    <p>博文名字博文名字</p>
+                </div>
+                <div class="float-left">
+                    <a>
+                        <img src="img/other (2).jpg"/>
+                    </a>
+                    <p>博文名字博文名字</p>
+                </div>
+                <div class="float-right">
+                    <a>
+                        <img src="img/other (2).jpg"/>
+                    </a>
+                    <p>博文名字博文名字</p>
+                </div>
+            </div>
+            <div class="img-small"><!--预留小的缩略图-->
+               <div class="">
+                    <a href="javascript:void(0)" data-text="装饰文字装饰文字装饰文字装饰文字装饰文字装饰文字">
+                        <img src="img/p1.jpg"/>
+                    </a>
+               </div>
+                <div class="margin_left_10">
+                    <a href="javascript:void(0)"  data-text="装饰文字装饰文字">
+                        <img src="img/p2.jpg"/>
+                    </a>
+               </div>
+                <div class="margin_left_10">
+                    <a href="javascript:void(0)" data-text="装饰文字装饰文字">
+                        <img src="img/p3.jpg"/>
+                    </a>
+               </div>
+                
+            </div>
+            <div class="clear"></div>
+            <div class="nav-bar">
+                <a href="javascript:void(0)">最新文章</a>
+                <a href="javascript:void(0)">心得笔记</a>
+                <a href="javascript:void(0)">Css3+Html5</a>
+                <a href="javascript:void(0)">网站建设</a>
+                <a href="javascript:void(0)">文字标签</a>
+                <a href="javascript:void(0)">文字广告</a>
+            </div>
+            <!--内部导航结束-->
+            <div class="article" data-text="content.html" onclick="articleClick(this)">
+                <a href="content.html" class="title">文章标题文章标题文章标题文章标题</a>
+                <div class="article-body">
+                    <a href="content.html" class="article_img"><img src="img/other (1).jpg"></a>
+                    <div class="article_right">
+                        <p>正文正文正文正文正文正文正文正文正文正文正文正文</p>
+                        <div class="right_bottom">
+                            <a href="content.html"><i class="user-name"></i>用户名</a>
+                            <a href="content.html"><i class="article-type"></i>文章类别</a>
+                            <a href="content.html"><i class="article-member"></i>阅读人次</a>
+                            <a href="content.html"><i class="article-counts"></i>999</a>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="clear"></div>
+             <div class="article" data-text="content.html" onclick="articleClick(this)">
+                <a href="javascript:void(0)" class="title">文章标题文章标题文章标题文章标题</a>
+                <div class="article-body">
+                    <a href="javascript:void(0)" class="article_img"><img src="img/other (1).jpg"></a>
+                    <div class="article_right">
+                        <p>正文正文正文正文正文正文正文正文正文正文正文正文</p>
+                        <div class="right_bottom">
+                            <a href="javascript:void(0)"><i class="user-name"></i>用户名</a>
+                            <a href="javascript:void(0)"><i class="article-type"></i>文章类别</a>
+                            <a href="javascript:void(0)"><i class="article-member"></i>阅读人次</a>
+                            <a href="javascript:void(0)"><i class="article-counts"></i>999</a>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="clear"></div>
+     </div>
+       
+       <!--右侧栏引入-->
+        <div class="text-right1" style="position: relative;">
+            <iframe src="text-right.html" scrolling="no" frameborder="0" border="0" id="frame"
+                    height="943px;"></iframe>
+            
+        </div>
+    </div>
+	<script src="js/banner.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>右侧栏</title>
+    <script language="JavaScript" src="js/jquery-3.3.1.min.js"></script>
+	<!--[if IE 8]>
+		 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/head.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<style>
+.tab-text div{
+    display: none;
+}
+.tab-text div:first-child{
+    display: block;
+}
+.clear{
+         clear: both;
+        }
+		
+</style>
+<body>
+   <div>
+            <div class="box-out">
+                <div class="box-top">
+                    图片精选
+                </div>
+                <div class="box-bottom bottom-img">
+                    <a href="javascript:void(0)">
+                         <img src="img/other (1).jpg"/>
+                    </a>
+                    <a href="javascript:void(0)">
+                         <img src="img/other (1).jpg"/>
+                    </a>
+                    <a href="javascript:void(0)">
+                         <img src="img/other (1).jpg"/>
+                    </a>
+                    <a href="javascript:void(0)">
+                         <img src="img/other (1).jpg"/>
+                    </a>
+                    <a href="javascript:void(0)">
+                         <img src="img/other (1).jpg"/>
+                    </a>
+                    <a href="javascript:void(0)">
+                         <img src="img/other (1).jpg"/>
+                    </a>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="box-out">
+                <div class="box-top">
+                    文章分类
+                </div>
+                <div class="box-bottom cate">
+                    <ul>
+                        <li><a href="">分类1(99)</a></li>
+                        <li><a href="">分类2(91)</a></li>
+                        <li><a href="">分类3(12)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class=clear></div>
+            <div class="box-out  tab">
+                <div class="box-top">
+                    <a href="javascript:void(0)">资讯</a>
+                    <a href="javascript:void(0)">活动</a>
+                    <a href="javascript:void(0)">推荐</a>
+                </div>
+                <div class="tab-text">
+                    <div class="box-bottom ">
+                        <p><a href="javascript:void(0)">你是什么人便会遇上什么人</a></p>
+                        <p><a href="javascript:void(0)">你是什么人便会遇上什么人</a></p>
+                        <p><a href="javascript:void(0)">第二届 优秀个人博客模板比赛参选活动</a></p>
+                        <p><a href="javascript:void(0)">第二届 黑色质感时间轴html5个人博客模板</a></p>
+                        <p><a href="javascript:void(0)">第二届 优秀个人博客模板比赛参选活动</a></p>
+                    </div>
+                    <div class="box-bottom">
+                        <p><a href="javascript:void(0)">翻译是在准确（信）、通顺（达）的基础上，</a></p>
+                        <p><a href="javascript:void(0)">把一种语言信息转变成另一种语言信</a></p>
+                        <p><a href="javascript:void(0)">表达方式，转换成相对熟悉的表达方式的过程。</a></p>
+                        <p><a href="javascript:void(0)">第二届 黑色质感时间轴html5个人博客模板</a></p>
+                        <p><a href="javascript:void(0)">第二届 优秀个人博客模板比赛参选活动</a></p>
+                    </div>
+                    <div class="box-bottom ">
+                        <p><a href="javascript:void(0)">其中，在甲语和乙语中，“翻”是指的这</a></p>
+                        <p><a href="javascript:void(0)"> 两种语言的转换，即先把一句甲语转换</a></p>
+                        <p><a href="javascript:void(0)">“译”是指这两种语言转换的过程，把甲语转换成乙语，</a></p>
+                        <p><a href="javascript:void(0)">第二届 黑色质感时间轴html5个人博客模板</a></p>
+                        <p><a href="javascript:void(0)">第二届 优秀个人博客模板比赛参选活动</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-out follow">
+                <div class="box-top">
+                    关注我们
+                </div>
+                <div class="box-bottom ">
+                    <img src="img/other (1).jpg"/>
+                </div>
+            </div>
+            <br/>
+     </div>
+       <script>
+        $().ready(function(){
+            $(".tab .box-top a").mouseover(function(){
+                var a=$(this).index();
+                $(".tab-text div").eq(a).show().siblings().hide();
+                
+        })
+        })
+    </script>
+</body>
+</html>
